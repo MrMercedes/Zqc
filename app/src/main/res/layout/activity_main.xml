@@ -32,6 +32,11 @@
         android:layout_marginRight="5dp"
         android:layout_height="50dp" />
 </LinearLayout>
+<com.example.hp0331.zqc.view.Search_View
+    android:layout_width="match_parent"
+    android:id="@+id/searchview"
+    android:visibility="gone"
+    android:layout_height="50dp"/>
 
 <android.support.v7.widget.RecyclerView
     android:layout_width="match_parent"

@@ -32,4 +32,9 @@ public  enum EasyToast {
 
         Toast.makeText(activity, textId, duration).show();
     }
+    public synchronized void show(Activity activity, String string, int duration) {
+        cancel();
+
+        Toast.makeText(activity, string, duration).show();
+    }
 }

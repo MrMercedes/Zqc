@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity  {
         }
         if (true) {
 //        if (username.equals("刘正华")&&password.equals("2b")){
-            Intent intent = new Intent(LoginActivity.this, BaiduMapActivity.class);
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
         } else {
             EasyToast.INSTANCE.show(this, R.string.nameorpwwrong, Toast.LENGTH_SHORT);

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.hp0331.zqc.view.MainView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F6F6">
+    <View
+        android:id="@+id/view_title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#46C4B7"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"/>
+    <ImageView
+        android:id="@+id/iv_head"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:src="@mipmap/head"/>
+
+    <TextView
+        android:id="@+id/tv_write"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:background="#C7EDCC"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:padding="10dp"
+        android:text="@string/location"
+        android:textColor="#8000FF"
+        android:layout_height="wrap_content"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@+id/view_title"
+        android:id="@+id/recycle_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
+
+
+</com.example.hp0331.zqc.view.MainView>

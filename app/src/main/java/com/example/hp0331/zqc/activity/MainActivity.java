@@ -1,5 +1,6 @@
 package com.example.hp0331.zqc.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -51,10 +52,8 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         mApp = (MyApplication) getApplication();
         initview();
-
     }
     public void setData(){
-
         for (int i=0;i<=20;i++){
         Fruits fruits=new Fruits();
         fruits.setName("苹果"+i);
@@ -68,19 +67,17 @@ public class MainActivity extends AppCompatActivity {
         tvLocation.setText(mApp.bmLocation.getCity());
         recycleList.setLayoutManager(new FlowLayoutManager(this));
         recycleList.setAdapter(adapter);
-
     }
 
     @OnClick({R.id.tv_location, R.id.iv_userimg})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_location:
-                EasyToast.INSTANCE.show(this,"current address:"+mApp.bmLocation.getAddress(), Toast.LENGTH_SHORT);
+                EasyToast.INSTANCE.show(this,getString(R.string.currentaddress)+":"+mApp.bmLocation.getAddress(), Toast.LENGTH_SHORT);
                 break;
             case R.id.iv_userimg:
+                startActivity(new Intent(this,FragmentActivity.class));
                 break;
-
-
         }
     }
     class FlowAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

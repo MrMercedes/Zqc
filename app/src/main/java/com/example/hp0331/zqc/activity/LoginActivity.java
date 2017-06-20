@@ -11,12 +11,13 @@ import android.widget.Toast;
 
 import com.example.hp0331.zqc.R;
 import com.example.hp0331.zqc.utils.EasyToast;
+import com.example.hp0331.zqc.view.MyViewCircle;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class LoginActivity extends AppCompatActivity  {
+public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.username)
     TextView username;
     @BindView(R.id.et_username)
@@ -31,6 +32,8 @@ public class LoginActivity extends AppCompatActivity  {
     TextView tvForgetpw;
     @BindView(R.id.tv_signup)
     TextView tvSignup;
+    @BindView(R.id.mycircle)
+    MyViewCircle mycircle;
 
 
     @Override
@@ -38,6 +41,7 @@ public class LoginActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+        mycircle.setRuning(true);
     }
 
     public void checkpassword() {
@@ -52,8 +56,9 @@ public class LoginActivity extends AppCompatActivity  {
         }
         if (true) {
 //        if (username.equals("刘正华")&&password.equals("2b")){
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            Intent intent = new Intent(LoginActivity.this, MyMainActivity.class);
             startActivity(intent);
+            finish();
         } else {
             EasyToast.INSTANCE.show(this, R.string.nameorpwwrong, Toast.LENGTH_SHORT);
         }
@@ -68,6 +73,7 @@ public class LoginActivity extends AppCompatActivity  {
             case R.id.tv_forgetpw:
                 break;
             case R.id.tv_signup:
+                startActivity(new Intent(this,SignupActivity.class));
                 break;
         }
     }
